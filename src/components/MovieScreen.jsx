@@ -1,9 +1,9 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-function MovieScreen({ list, page, setPage, movieList }) {
-  const movieDisplay = movieList.map((movie, index) => {
-    return <MovieCard movie={movie} />;
+function MovieScreen({ movieList, addMovie }) {
+  const movieDisplay = movieList.map((movie) => {
+    return <MovieCard movie={movie} addMovie={addMovie} />;
   });
 
   return (

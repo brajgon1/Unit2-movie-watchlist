@@ -24,6 +24,10 @@ function App() {
     }
   };
 
+  const addMovie = (movie) => {
+    setList([...list, movie])
+  };
+
   // use this template for useEffect. the useEffect Hook in React allows you to perform side effects in functional components, such as data fetching or DOM manipulation. It runs after every render and can optionally clean up any resources used by the effect.
   // line 25 invokes the above getData function
   useEffect(() => {
@@ -40,8 +44,9 @@ function App() {
           page={page}
           setPage={setPage}
           list={list}
+          addMovie={addMovie}
         />
-        <Watchlist list={list} />
+        <Watchlist list={list}/>
       </main>
     </div>
   );
