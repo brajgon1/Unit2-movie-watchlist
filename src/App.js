@@ -3,11 +3,12 @@ import Header from "./components/Header";
 import "./App.css";
 import axios from "axios";
 import MovieScreen from "./components/MovieScreen";
+import Watchlist from "./components/Watchlist";
 // when using axios make sure to import it!!!
 
 function App() {
   const [movieList, setMovieList] = useState([]);
-  const [list, setList] = useState("");
+  const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
 
   const getData = () => {
@@ -34,12 +35,13 @@ function App() {
       <Header />
       <main>
         <MovieScreen
-        // props are passed in below
-            movieList={movieList}
-            page={page}
-            setPage={setPage}
-            list={list}
+          // props are passed in below
+          movieList={movieList}
+          page={page}
+          setPage={setPage}
+          list={list}
         />
+        <Watchlist list={list} />
       </main>
     </div>
   );
