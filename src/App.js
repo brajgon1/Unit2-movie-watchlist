@@ -6,7 +6,7 @@ import MovieScreen from "./components/MovieScreen";
 // when using axios make sure to import it!!!
 
 function App() {
-  const [movieList, setMovieList] = useState("");
+  const [movieList, setMovieList] = useState([]);
   const [list, setList] = useState("");
   const [page, setPage] = useState(1);
 
