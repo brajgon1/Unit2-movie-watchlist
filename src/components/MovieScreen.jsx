@@ -1,11 +1,10 @@
 import React from "react";
-import MovieCard from "./components/MovieCard"
+import MovieCard from "./MovieCard";
 
 function MovieScreen({ list, page, setPage, movieList }) {
-
-    const movieDisplay = movieList.map((movie, index) => {
-        return <MovieCard movie={movie}/>
-     });
+  const movieDisplay = movieList.map((movie, index) => {
+    return <MovieCard movie={movie} />;
+  });
 
   return (
     <div className="page">
