@@ -28,19 +28,10 @@ function App() {
     setList([...list, movie])
   };
 
-//   Inside of App.js, create a function called removeMovie. It will take in “movie” as a parameter
-
-// Inside of removeMovie, create a variable called newState
-
-// Set newState equal to list.filter and pass a callback to the filter method
-
-// The callback should return the items in the array that are not the movie passed in as a parameter
-
-// We will then call setList passing in newState
 
   const removeMovie = (movie) => {
-    const newState = list.filter((item) => {
-      return item!== movie;
+    const newState = list.filter((mov) => {
+      return mov !== movie;
     });
     setList(newState);
   }

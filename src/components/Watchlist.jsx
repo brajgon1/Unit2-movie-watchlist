@@ -3,7 +3,14 @@ import MovieCard from "./MovieCard";
 
 function Watchlist({ list, removeMovie }) {
   const movieDisplay = list.map((movie, index) => {
-    return <MovieCard key={index} movie={movie} removeMove={removeMovie} list={list} />;
+    return (
+      <MovieCard
+        key={index}
+        movie={movie}
+        removeMovie={removeMovie}
+        list={list}
+      />
+    );
   });
 
   return (
