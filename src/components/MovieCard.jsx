@@ -1,6 +1,15 @@
 import React from "react";
 
-function MovieCard({ movie, addMovie }) {
+function MovieCard({ list, movie, addMovie, removeMovie }) {
+  const inWatchlist = list.filter((mov) => {
+    return mov.id === movie.id;
+  });
+
+const button = inWatchlist === 0 ? (
+    <button onClick={() => addMovie(movie)}>Add to List</button>
+  ) : (
+    <button onClick={() => removeMovie(movie)}>Remove from List</button>
+)
 
   return (
     <div className="movie-card">
@@ -8,7 +17,7 @@ function MovieCard({ movie, addMovie }) {
         <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
         <h3>{movie.original_title}</h3>
       </div>
-      <button onClick={() => addMovie(movie)}>Add to List</button>
+      {button}
     </div>
   );
 }

@@ -28,6 +28,24 @@ function App() {
     setList([...list, movie])
   };
 
+//   Inside of App.js, create a function called removeMovie. It will take in “movie” as a parameter
+
+// Inside of removeMovie, create a variable called newState
+
+// Set newState equal to list.filter and pass a callback to the filter method
+
+// The callback should return the items in the array that are not the movie passed in as a parameter
+
+// We will then call setList passing in newState
+
+  const removeMovie = (movie) => {
+    const newState = list.filter((item) => {
+      return item!== movie;
+    });
+    setList(newState);
+  }
+
+
   // use this template for useEffect. the useEffect Hook in React allows you to perform side effects in functional components, such as data fetching or DOM manipulation. It runs after every render and can optionally clean up any resources used by the effect.
   // line 25 invokes the above getData function
   useEffect(() => {
@@ -45,8 +63,9 @@ function App() {
           setPage={setPage}
           list={list}
           addMovie={addMovie}
+          removeMovie={removeMovie}
         />
-        <Watchlist list={list}/>
+        <Watchlist list={list} removeMovie={removeMovie}/>
       </main>
     </div>
   );
